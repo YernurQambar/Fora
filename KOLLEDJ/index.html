@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="dark-mode">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>Simple Store</h2>
+            </div>
+
+            <nav class="nav-desktop">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+                <button id="theme-toggle" class="theme-btn">☀️</button>
+            </nav>
+
+            <div class="burger-menu" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-mobile" id="nav-mobile">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#cart">Cart (<span class="cart-count-mobile">0</span>)</a>
+                <button id="theme-toggle-mobile" class="theme-btn">☀️</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="home-section">
+            <div class="container">
+                <div class="brand-image">
+                    <img src="/placeholder.svg?height=300&width=600" alt="Brand Banner" id="brand-img">
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slides" id="carousel-slides">
+                        </div>
+                        <button class="carousel-btn prev" id="prev-btn">❮</button>
+                        <button class="carousel-btn next" id="next-btn">❯</button>
+                        <div class="carousel-dots" id="carousel-dots">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2>Our Products</h2>
+
+                <div class="controls">
+                    <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                    <select id="category-filter" class="category-filter">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="cart-section">
+            <div class="container">
+                <h2>Shopping Cart</h2>
+                <div class="cart-content">
+                    <div class="cart-items" id="cart-items">
+                        <p class="empty-cart">Your cart is empty</p>
+                    </div>
+                    <div class="cart-summary" id="cart-summary" style="display: none;">
+                        <div class="total-price">
+                            <strong>Total: $<span id="total-price">0.00</span></strong>
+                        </div>
+                        <button class="checkout-btn" id="checkout-btn">Checkout via WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h3>Complete Your Order</h3>
+            <form id="checkout-form">
+                <input type="text" id="customer-name" placeholder="Enter your full name" required>
+                <button type="submit">Send Order to WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
